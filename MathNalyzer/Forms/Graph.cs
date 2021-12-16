@@ -59,7 +59,11 @@ namespace MathNalyzer
             {
                 e.Graphics.FillRectangle(pen.Brush, newPoint.X - 2, newPoint.Y - 2, 5, 5);
                 ToolTip tip = new ToolTip();
-                Descriptions.Add(new PointF(newPoint.X - 2 , newPoint.Y - 2), Points.ElementAt(index).ToString());
+                try
+                {
+                    Descriptions.Add(new PointF(newPoint.X - 2, newPoint.Y - 2), Points.ElementAt(index).ToString());
+                }
+                catch { }
                 index++;
             }
         }

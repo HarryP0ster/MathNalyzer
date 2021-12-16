@@ -147,7 +147,8 @@ namespace MathNalyzer
                 }
                 else if (Type == VarType.Interval) //If valus is an interval
                 {
-                    if (left_interval != "" && right_interval != "" && step != "")
+                    if (left_interval != "" && right_interval != "" && step != "" && Convert.ToDouble(step) != 0 && 
+                        ((Convert.ToDouble(left_interval) < Convert.ToDouble(right_interval) && Convert.ToDouble(step) > 0) || (Convert.ToDouble(left_interval) > Convert.ToDouble(right_interval) && Convert.ToDouble(step) < 0)))
                     {
                         for (double i = Convert.ToDouble(left_interval); i <= Convert.ToDouble(right_interval); i += Convert.ToDouble(step))
                             Values.Add(i);
